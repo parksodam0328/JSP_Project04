@@ -55,11 +55,11 @@
 		for(int j=0;j<res2.size();j++){
 		if(res1.get(i).equals(res2.get(j))){
 			res1.remove(res1.get(i));
-			break;
+			//break;
 		}
 		}
 	}
-	Collections.shuffle(res1);
+	Collections.shuffle(res1); // list 정렬
 	for(int i=0;i<res1.size();i++){
 		System.out.print("랜덤 : "+res1.get(i)+" ");
 	}
@@ -67,16 +67,19 @@
 	<center><br><br>
 	<table id="bun" width="300px" height="50px" style="background-color:#47c83e; text-align:center"><tr><td>교탁</td></tr></table>
 	<br><br><br>
-	<table width="70%" height="100%" style="border-spacing:20px 20px;">
+	<table height="100%">
 		<tr>
 	<%for(int i=0;i<res1.size();i++){%>
 	
 		
 		<%
-			if((i+1)%2==0 && (i+1)%(divid*2)==0) {%> <td width="100px" height="100px" style="border:1px solid #000000;" align="center"><%=res1.get(i) %></td>
+			if((i+1)%(divid*2)==0) {%> <td width="100px" height="100px" style="border:1px solid #000000;" align="center"><%=res1.get(i) %></td>
 		</tr>
 		<tr>
-	<%		}else{%>
+	<%	
+			}else if((i+1)%2==0){%>
+		<td width="100px" height="100px" style="border:1px solid #000000;" align="center"><%=res1.get(i) %></td><td width="10px"></td><td width="10px"></td>
+			<% }else{%>
 		<td width="100px" height="100px" style="border:1px solid #000000;" align="center"><%=res1.get(i) %></td>
 	
 	<%}

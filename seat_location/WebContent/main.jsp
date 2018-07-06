@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>더샘</title>
+<title>자리바꾸기</title>
 </head>
 <body>
 <jsp:forward page="seat.jsp">
