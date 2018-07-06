@@ -15,7 +15,7 @@
 	String divide = request.getParameter("seat");
 	int divide_num = Integer.parseInt(divide.substring(0,1));
 	int num = Integer.parseInt(request.getParameter("student"));
-	Random rand = new Random();
+	/* Random rand = new Random();
 	int[] resNum = new int[num];
 	for(int i=0;i<num;i++){
 		resNum[i] = rand.nextInt(num)+1;  
@@ -24,6 +24,10 @@
 				i--;
 			}
 		}
+	} */
+	int[] resNum = new int[num];
+	for(int i=0;i<num;i++){
+		resNum[i] = i+1; 
 	}%>
 	
 	<center><br><br>
@@ -39,17 +43,18 @@
 		<tr>
 	<%for(int i=0;i<num;i++){%>
 	
-		<%if((i+1)%2==0) {%>
+		
 		<td width="100px" height="100px" style="border:1px solid #000000;" align="center"><input type="checkbox" name="decisive" value="<%=resNum[i] %>"><%=resNum[i] %></td>
-		<%} else{%>
-		<td width="100px" height="100px" style="border:1px solid #000000;" align="center"><input type="checkbox" name="decisive" value="<%=resNum[i] %>"><%=resNum[i] %></td>
-		<%} %>
+
 		<%if((i+1)%(divide_num*2)==0){%>
 		</tr>
 		<tr>
 	<%		}
 		}
 %>
+</tr>
+<tr>
+<td td colspan="<%=divide_num*2%>" align="center"><input type="checkbox" name="decisive" value="<%=0 %>">결원 인원 없음</td>
 </tr>
 <tr>
 <td colspan="<%=divide_num*2%>" align="center">
